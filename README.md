@@ -6,11 +6,11 @@ Hotel Managment System Website.
     Users of Website Pages (User, Staff, Admin).
    
 =(User)
-   Create an account (Sign Up) Page. 
+   Create an account (Sign Up) Page
    , Signin Page
-   , Recover Password and Edit Profile Change Profile.
-   , Book room in Hotel and Check availability of room.
-   , Display the list of room the user reserve. 
+   , Recover Password and Edit Profile Change Profile
+   , Book room in Hotel and Check availability of room
+   , Display the list of room the user reserve
     
 =(Staff)
    , Get list of Current users.
