@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string username = "";
+        if (Request.Cookies["userInformation"] != null)
+            username = Request.Cookies["userInformation"].Values["username"];
+        lblMsg.Text = " Welcome " + username + " To Hotel Website";
+
+        imgAdminPicture.ImageUrl = "~/UserPic/" + username + ".jpg";
+
+
+
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1
+        {
+            width: 100%;
+            margin-bottom: 3px;
+            height: 162px;
+        }
+        .auto-style4
+        {
+            width: 250px;
+            height: 164px;
+        }
+        .auto-style5
+        {
+            height: 164px;
+        }
+        .auto-style6
+        {
+            height: 92px;
+        }
+        .auto-style9
+        {
+            width: 100%;
+        }
+        .auto-style17 {
+            width: 114px;
+            height: 15px;
+        }
+        .auto-style18 {
+            width: 223px;
+            height: 15px;
+        }
+        .auto-style20 {
+            height: 15px;
+            font-weight: 700;
+        }
+        .auto-style21 {
+            height: 304px;
+        }
+    </style>
+</head>
+<body style="height: 586px">
+    <form id="form1" runat="server">
+    <div style="vertical-align: top; height: 610px;">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style6">
+                    <table class="auto-style1">
+                        <tr>
+                            <td class="auto-style4" style="background-color: #FFFFFF">
+                                <asp:Image ID="imgAdminPicture" runat="server" Height="130px" Width="230px" />
+                            </td>
+                            <td class="auto-style5" style="background-color: #FFFFFF">
+                                <asp:Label ID="lblMsg" runat="server" Font-Names="Bernard MT Condensed" Font-Size="XX-Large" ForeColor="#990099" Font-Bold="True"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            </table>
+        <table class="auto-style9" style="background-color: #CC00FF; height: 39px;">
+            <tr>
+                <td class="auto-style17">
+                                &nbsp;&nbsp;&nbsp;
+                                <asp:HyperLink ID="HyperLink1" runat="server" Font-Names="Arial" ForeColor="#FFFFCC" NavigateUrl="~/Users/Admin/AdminHome.aspx" Font-Bold="True" Font-Size="Large"> Home </asp:HyperLink>
+                            </td>
+                <td class="auto-style18">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:HyperLink ID="HyperLink2" runat="server" Font-Names="Arial" ForeColor="#FFFFCC" NavigateUrl="~/Users/Admin/ManageUserAccount.aspx" Font-Bold="True" Font-Size="Large">Manage user Account </asp:HyperLink>
+                            </td>
+                <td class="auto-style20">
+                                <asp:HyperLink ID="HyperLink3" runat="server" Font-Names="Arial" ForeColor="#FFFFCC" NavigateUrl="~/Users/Admin/ManageRooms.aspx" Font-Bold="True" Font-Size="Large">Manage rooms</asp:HyperLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" Font-Names="Arial" ForeColor="#FFFFCC" NavigateUrl="~/Users/Admin/GeneralSQLQuery.aspx" Font-Bold="True">GeneralSQLQuery</asp:HyperLink>
+                            </td>
+                <td class="auto-style20"></td>
+                <td class="auto-style20">&nbsp;&nbsp;&nbsp; <asp:HyperLink ID="HyperLink5" runat="server" Font-Names="Arial" ForeColor="#FFFFCC" NavigateUrl="~/HomePage.aspx" Font-Bold="True">Logout</asp:HyperLink>
+                            </td>
+            </tr>
+        </table>
+        <br />
+        <table class="auto-style9">
+            <tr>
+                <td class="auto-style21" style="vertical-align: top">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td><CENTER>
+    <FONT FACE="Arial" COLOR="midnightblue" size = "-1">
+                    <br />
+                    <br />
+                    <br />
+Powered BY FUE Team Spring 2020 &copy; 2020 <A href="mailto:akhalil@aucegypt.edu">contact webmaster</A>
+</FONT>
+</CENTER></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
